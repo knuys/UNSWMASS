@@ -1,2 +1,2 @@
-# UNSWMASS.github.io
+# UNSWMASS
 Mature-Age Student Society Website repository
