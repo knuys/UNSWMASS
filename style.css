@@ -1,0 +1,272 @@
+/* =========================
+   UNSW-INSPIRED DESIGN SYSTEM
+   ========================= */
+
+:root {
+
+  /* Core Colours */
+  --unsw-yellow: #FFDD00;
+  --unsw-black: #000000;
+  --unsw-white: #FFFFFF;
+
+  /* Greys */
+  --grey-100: #F5F5F5;
+  --grey-200: #E5E5E5;
+  --grey-400: #999999;
+  --grey-700: #333333;
+
+  /* Typography */
+  --font-primary:
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif;
+
+  /* Layout */
+  --container-width: 1200px;
+  --border-radius: 6px;
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 32px;
+  --space-xl: 64px;
+
+  /* Shadows */
+  --shadow-soft:
+    0 4px 12px rgba(0,0,0,0.08);
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+}
+
+/* =========================
+   RESET
+   ========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary);
+  color: var(--unsw-black);
+  background: var(--unsw-white);
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* =========================
+   TYPOGRAPHY
+   ========================= */
+
+h1, h2, h3, h4 {
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: clamp(3rem, 6vw, 5rem);
+  margin-bottom: var(--space-lg);
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: var(--space-md);
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: var(--space-sm);
+}
+
+p {
+  margin-bottom: var(--space-md);
+  max-width: 70ch;
+  color: var(--grey-700);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+/* =========================
+   LAYOUT
+   ========================= */
+
+.container {
+  width: 90%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
+
+.section {
+  padding: var(--space-xl) 0;
+}
+
+/* =========================
+   HEADER
+   ========================= */
+
+.site-header {
+  background: var(--unsw-black);
+  color: var(--unsw-white);
+  padding: var(--space-md) 0;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 1.2rem;
+  letter-spacing: 0.05em;
+}
+
+.nav-links {
+  display: flex;
+  gap: var(--space-lg);
+  list-style: none;
+}
+
+/* =========================
+   HERO
+   ========================= */
+
+.hero {
+  background: var(--unsw-yellow);
+  color: var(--unsw-black);
+  padding: 120px 0;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 600px;
+}
+
+/* =========================
+   BUTTONS
+   ========================= */
+
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  transition: var(--transition-fast);
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--unsw-black);
+  color: var(--unsw-white);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid var(--unsw-black);
+  color: var(--unsw-black);
+}
+
+/* =========================
+   CARDS
+   ========================= */
+
+.card-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-lg);
+}
+
+.card {
+  background: var(--unsw-white);
+  border: 1px solid var(--grey-200);
+  padding: var(--space-lg);
+  border-radius: var(--border-radius);
+  transition: var(--transition-fast);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-soft);
+}
+
+/* =========================
+   FORMS
+   ========================= */
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid var(--grey-200);
+  border-radius: var(--border-radius);
+  font: inherit;
+  margin-bottom: var(--space-md);
+}
+
+input:focus,
+textarea:focus {
+  outline: 3px solid var(--unsw-yellow);
+  border-color: var(--unsw-black);
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+
+.site-footer {
+  background: var(--unsw-black);
+  color: var(--unsw-white);
+  padding: var(--space-xl) 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-lg);
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 768px) {
+
+  .nav {
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .hero {
+    padding: 80px 0;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+}
