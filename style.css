@@ -123,8 +123,8 @@ a:hover {
    ========================= */
 
 .site-header {
-  background: var(--unsw-black);
-  color: var(--unsw-white);
+  background: var(--unsw-white);
+  color: var(--unsw-black);
   padding: var(--space-md) 0;
 }
 
